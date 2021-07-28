@@ -1,0 +1,28 @@
+<h1>Subscribers#new</h1>
+<p>Find me in app/views/subscribers/new.html.erb</p>
+<div id="error_explanation">
+ <% x = @subscriber.to_a%>
+ <ul>
+ <% x.each do |x, y|%>
+
+  <%y.each do|z|%>
+  <li>
+    <%= z%>
+  </li>
+  <%end%>
+ <%end%>
+ </ul>
+</div>  
+
+<%= form_tag ("/subscribers/create") do %>
+  <%= text_field_tag "name", "name" %><br>
+  <%= text_field_tag "username", "username" %><br>
+  <%= text_field_tag "email", "email" %><br>
+  <%= text_field_tag "password", "password" %><br>
+  <%= text_field_tag "password_confirmation", "password_confirmation" %><br>
+  <%= text_field_tag "phone_no", "phone_no" %><br>
+
+  <%= submit_tag "Save" %>
+<% end %><br>
+<%= link_to 'Back', :controller => :subscribers, :actions => :index %>
+

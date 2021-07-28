@@ -1,0 +1,34 @@
+<h1>Subscribers#index</h1>
+<p>Find me in app/views/subscribers/index.html.erb</p>
+<%= notice%>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User Name</th>
+      <th>Mail</th>
+      <th>Phone no</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user["name"] %></td>
+        <td><%= user["username"] %></td>
+        <td><%= user["email"] %></td>
+        <td><%= user["phone_no"] %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subscriber',
+ :controller => :subscribers, :action => :new %>
+ <%= link_to 'Login',
+ :controller => :subscribers, :action => :login_form%>
+

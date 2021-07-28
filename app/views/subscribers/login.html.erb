@@ -1,0 +1,14 @@
+<br><br><br><br>
+<div id="error_explanation">
+ <%= @subscriber%>
+</div>
+<%= form_tag ("/subscribers/login") do %>
+  
+  <%= text_field_tag "email", "email" %><br>
+  <%= text_field_tag "password", "password" %><br>  
+  <%= text_field_tag "otp", "otp" %><br>
+
+  <%= submit_tag "Login" %>
+<% end %><br>
+<%= link_to 'Back', :controller => :subscribers,
+ :actions => :index, method: :post%>
